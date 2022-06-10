@@ -24,5 +24,20 @@ namespace lab4.Controllers
             };
             return View(viewModel);
         }
+        [Authorize]
+        [HttpPost]
+        public ActionResult Create(CourseViewModel viewModel)
+        {
+            var course = new Course
+            {
+                LecturerId = User.Identity.GetUserId(),
+                Datatime = viewModel.GetDatatime(),
+                CatagoryId = viewModel.Category,
+                Place = viewModel.Place
+            };
+            _dbContext.Courses.Add(course);
+            _dbContext.SavaChanges();
+            return RedirectToAction("Index","Home");
+        }
     }
 }
