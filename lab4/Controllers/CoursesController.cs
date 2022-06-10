@@ -16,6 +16,7 @@ namespace lab4.Controllers
         {
             _dbContext = new ApplicationDbContext();
         }
+        [Authorize]
         public ActionResult Create()
         {
             var viewModel = new CourseViewModel
