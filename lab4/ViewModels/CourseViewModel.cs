@@ -13,6 +13,7 @@ namespace lab4.ViewModels
         [Required]
         public string Date { get; set; }
         [Required]
+        [ValidTime]
         public string Time { get; set; }
         [Required]
         public byte Category { get; set; }
