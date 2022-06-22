@@ -37,7 +37,7 @@ namespace lab4.Controllers
             var course = new Course
             {
                 LecturerId = User.Identity.GetUserId(),
-                Datatime = viewModel.GetDatatime(),
+                Datatime = viewModel.GetDataTime(),
                 CatagoryId = viewModel.Category,
                 Place = viewModel.Place
             };
